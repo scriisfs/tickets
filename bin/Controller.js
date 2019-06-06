@@ -5,8 +5,8 @@ class Controller {
         this.connect();
     }
 
-    connect (){
-        try{
+async connect (){
+
             await mongoose.connect(
             "mongodb+srv://scriisfs:sotracor2019@cluster0-piltr.mongodb.net/Tickets_Sotracor?retryWrites=true",
             {useNewUrlParser:true}
@@ -16,6 +16,5 @@ class Controller {
             console.error(e)
         }
     }
-}
 
-exports.controller = new Controller();
+exports.controller = new Controller()
