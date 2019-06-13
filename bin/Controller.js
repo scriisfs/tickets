@@ -24,6 +24,15 @@ async connect (){
 
             res.send( users );
 
+      })
+
+   }
+
+        postUsers(req, res){
+        let users = req.body.users;
+        User.create( users, (err, result)=>{
+            if(err)throw err;
+            res.send({newUser:result})
         })
     }
 }
