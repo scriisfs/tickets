@@ -1,5 +1,6 @@
 const mongoose = require ("mongoose");
 const User = require ("./models/User");
+const Registros = require ("./models/Registros")
 
 class Controller {
     constructor(){
@@ -23,6 +24,15 @@ async connect (){
             if(err) throw err;
 
             res.send( users );
+
+      })
+
+   }
+   getRegistros(res){
+        Registros.find({}, (err, registros)=>{
+            if(err) throw err;
+
+            res.send( registros );
 
       })
 
