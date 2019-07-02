@@ -28,6 +28,7 @@ controller.getRegistros(res)
 
 })
 
+//Id de todos los estudiantes
 app.get("/Registros/:id_estudiantes", (req, res) => {
 console.log(req.params)
 res.send("ok");
