@@ -23,15 +23,57 @@ app.post("/users", (req, res)=>{
     //res.send('OK')
 })
 
+//Traer todos los registros
 app.get("/Registros", (req, res) => {
 controller.getRegistros(res)
 
 })
 
-//Id de todos los estudiantes
-app.get("/Registros/:id_estudiantes", (req, res) => {
+//Traer un estudiante en específico
+app.get("/Registros/estudiantes/:id_estudiantes", (req, res) => {
 console.log(req.params)
 res.send("ok");
 //controller.getRegistros(res)
 })
+
+//Traer todos los admins
+app.get("/Admins", (req, res) => {
+controller.getAdmins(res)
+
+})
+
+//Traer todos los estudiantes
+app.get("/Estudiantes", (req, res) => {
+controller.getEstudiantes(res)
+
+})
+
+//Mostrar el bloque de hora de un estudiante
+app.get("/Estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {
+console.log(req.params)
+res.send("ok");
+//controller.getRegistros(res)
+})
+
+
+//Traer todos los tickets
+app.get("/Tickets", (req, res) => {
+controller.getTickets(res)
+
+})
+
+//Mostrar el consumo de tickets que tiene el estudiante
+app.get("/Registros/estudiantes/:id_estudiantes/:numero_consumo", (req, res) => {
+console.log(req.params)
+res.send("ok");
+//controller.getRegistros(res)
+})
+
+
+//Traer todos los bloques
+app.get("/Bloques", (req, res) => {
+controller.getBloques(res)
+
+})
+
 exports.app = app;

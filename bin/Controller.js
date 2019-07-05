@@ -1,6 +1,10 @@
 const mongoose = require ("mongoose");
 const User = require ("./models/User");
-const Registros = require ("./models/Registros")
+const Registros = require ("./models/Registros");
+const Admins = require ("./models/Admins");
+const Tickets = require ("./models/Tickets");
+const Bloques = require ("./models/Bloques");
+const Estudiantes = require ("./models/Estudiantes")
 
 class Controller {
     constructor(){
@@ -28,6 +32,7 @@ async connect (){
       })
 
    }
+
    getRegistros(res){
         Registros.find({}, (err, registros)=>{
             if(err) throw err;
@@ -38,6 +43,48 @@ async connect (){
 
    }
 
+   getAdmins(res){
+        Admins.find({}, (err, admins)=>{
+            if(err) throw err;
+
+            res.send( admins );
+
+      })
+
+   }
+
+ getEstudiantes(res){
+        Estudiantes.find({}, (err, estudiantes)=>{
+            if(err) throw err;
+
+            res.send( estudiantes );
+
+      })
+
+   }
+
+   getTickets(res){
+        Tickets.find({}, (err, tickets)=>{
+            if(err) throw err;
+
+            res.send( tickets );
+
+      })
+
+   }
+
+   getBloques(res){
+        Bloques.find({}, (err, bloques)=>{
+            if(err) throw err;
+
+            res.send( bloques );
+
+      })
+
+   }
+
+
+
         postUsers(req, res){
         let users = req.body.users;
         User.create( users, (err, result)=>{
@@ -46,5 +93,7 @@ async connect (){
         })
     }
 }
+
+
 
 exports.controller = new Controller()
