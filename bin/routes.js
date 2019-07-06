@@ -29,8 +29,15 @@ controller.getRegistros(res)
 
 })
 
-//Traer un estudiante en específico
+//Traer el registro de un estudiante en específico
 app.get("/Registros/estudiantes/:id_estudiantes", (req, res) => {
+console.log(req.params)
+res.send("ok");
+//controller.getRegistros(res)
+})
+
+//Que un admin pueda ver el número de recarga del ticket de un estudiante
+app.get("/Registros/admin/:id_admins/estudiantes/:id_estudiantes/tickets/numero_recarga", (req, res) => {
 console.log(req.params)
 res.send("ok");
 //controller.getRegistros(res)
@@ -42,13 +49,21 @@ controller.getAdmins(res)
 
 })
 
+
+//Mostrar el id de un admin con su respectivos nombres y apellidos
+app.get("/Registros/admins/:id_admins/:nombre_1/:nombre_2/:apellido_1/:apellido_2", (req, res) => {
+console.log(req.params)
+res.send("ok");
+//controller.getRegistros(res)
+})
+
 //Traer todos los estudiantes
 app.get("/Estudiantes", (req, res) => {
 controller.getEstudiantes(res)
 
 })
 
-//Mostrar el bloque de hora de un estudiante
+//Mostrar el bloque de horario de un estudiante
 app.get("/Estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {
 console.log(req.params)
 res.send("ok");
