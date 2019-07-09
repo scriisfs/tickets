@@ -83,8 +83,6 @@ async connect (){
 
    }
 
-
-
         postUsers(req, res){
         let users = req.body.users;
         User.create( users, (err, result)=>{
@@ -92,6 +90,49 @@ async connect (){
             res.send({newUser:result})
         })
     }
+
+       postRegistros(req, res){
+        let registros= req.body.registros;
+        Registros.create( registros, (err, result)=>{
+            if(err)throw err;
+            res.send({newUser:result})
+        })
+    }
+
+   postAdmins(req, res){
+        let admins = req.body.admins;
+        Admins.create( admins, (err, result)=>{
+            if(err)throw err;
+            res.send({newUser:result})
+        })
+    }
+
+        postEstudiantes(req, res){
+        let estudiantes = req.body.estudiantes;
+        Estudiantes.create( estudiantes, (err, result)=>{
+            if(err)throw err;
+            res.send({newUser:result})
+        })
+    }
+
+       postTickets(req, res){
+        let tickets = req.body.tickets;
+        Tickets.create( tickets, (err, result)=>{
+            if(err)throw err;
+            res.send({newUser:result})
+        })
+    }
+
+      postBloques(req, res){
+        let bloques = req.body.bloques;
+        Bloques.create(  (err, result)=>{
+            if(err)throw err;
+            res.send({newUser:result})
+        })
+    }
+
+
+
 }
 
 
