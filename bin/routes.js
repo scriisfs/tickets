@@ -33,7 +33,7 @@ controller.getRegistros(res)
 app.post("/Registros", (req, res)=>{
     //console.log(req.body);
     controller.postRegistros(req, res);
-    res.send('OK')
+    //res.send('OK')
 })
 
 
@@ -61,7 +61,7 @@ controller.getAdmins(res)
 app.post("/Admins", (req, res)=>{
     //console.log(req.body);
     controller.postAdmins(req, res);
-    res.send('OK')
+    //res.send('OK')
 })
 
 
@@ -82,7 +82,7 @@ controller.getEstudiantes(res)
 app.post("/Estudiantes", (req, res)=>{
     //console.log(req.body);
     controller.postEstudiantes(req, res);
-    res.send('OK')
+    //res.send('OK')
 })
 
 
@@ -104,7 +104,7 @@ controller.getTickets(res)
 app.post("/Tickets", (req, res)=>{
     //console.log(req.body);
     controller.postTickets(req, res);
-    res.send('OK')
+    //res.send('OK')
 })
 
 //Mostrar el consumo de tickets que tiene el estudiante
@@ -125,7 +125,7 @@ controller.getBloques(res)
 app.post("/Bloques", (req, res)=>{
     //console.log(req.body);
     controller.postBloques(req, res);
-    res.send('OK')
-})
+    //res.send('OK')
+}) 
 
 exports.app = app;

@@ -95,7 +95,7 @@ async connect (){
         let registros= req.body.registros;
         Registros.create( registros, (err, result)=>{
             if(err)throw err;
-            res.send({newUser:result})
+            res.send({newRegistros:result})
         })
     }
 
