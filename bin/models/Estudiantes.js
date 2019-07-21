@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
+const Bloques = mongoose.model('Bloques');
 
 const EstudiantesSchema = new Schema ({
     id_estudiante: String,
@@ -11,7 +12,13 @@ const EstudiantesSchema = new Schema ({
     telefono: String,
     barrio: String,
     esrtrato: String,
-    id_bloque: String
+    id_bloque: String,
+      Bloques: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Bloques"
+    }
+  ]
 
 });
 

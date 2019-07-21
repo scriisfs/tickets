@@ -29,6 +29,7 @@ controller.getRegistros(res)
 
 })
 
+
 //Agregar un registro
 app.post("/Registros", (req, res)=>{
     //console.log(req.body);
@@ -126,6 +127,12 @@ app.post("/Bloques", (req, res)=>{
     //console.log(req.body);
     controller.postBloques(req, res);
     //res.send('OK')
-}) 
+})
+
+/app.get("/Bloques", function(req, res) {
+	Bloques.find({}, function(err, bloques) {
+    	res.status(200).send(bloques)
+    });
+});
 
 exports.app = app;

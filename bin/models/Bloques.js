@@ -4,8 +4,14 @@ const Schema = mongoose.Schema;
 const BloquesSchema = new Schema ({
     id_tickets: String,
     numero_recargas: String,
-    numero_consumo: String
+    numero_consumo: String,
 
+      estudiante: [
+{
+      type: Schema.Types.ObjectId,
+      ref: "Estudiantes"
+    }
+  ]
 
 });
 

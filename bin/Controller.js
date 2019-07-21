@@ -53,6 +53,13 @@ async connect (){
 
    }
 
+ getBloques(res) {
+    Bloques.find().exec(function(err, bloques) {
+      if (err) throw err;
+      res.send({ status: 200, bloques: bloques });
+    });
+  }
+
  getEstudiantes(res){
         Estudiantes.find({}, (err, estudiantes)=>{
             if(err) throw err;
