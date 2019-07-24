@@ -43,10 +43,10 @@ app.post("/Registros", (req, res) => {
 
 
 //Traer el registro de un estudiante en específico
-app.get("/Registros/estudiantes/:id_estudiantes", (req, res) => {
-console.log(req.params)
-res.send("ok");
-//controller.getRegistros(res)
+app.get("/Registros/estudiantes/:nombre_1", (req, res) => {
+let { nombre_1} = req.params;
+controller.getRegistro(nombre_1, res);
+
 })
 
 //Que un admin pueda ver el número de recarga del ticket de un estudiante

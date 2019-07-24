@@ -19,6 +19,13 @@ const RegistrosSchema = new Schema ({
       type: Schema.Types.ObjectId,
       ref: "Tickets"
     }
+  ],
+
+  estudiantes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Estudiantes"
+    }
   ]
 
 
