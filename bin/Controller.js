@@ -121,6 +121,22 @@ setEstudiantes(estudiantes, res) {
     });
   }
 
+updateEstudiantes(estudiantes, res) {
+    //optenemos los campos que queremos actualizar
+    let { nombre_1, apellido_1 } = estudiantes;
+    //actualizamos teniendo en cuenta una condicion con el operador $set
+    //https://docs.mongodb.com/manual/reference/operator/update/set/
+    Estudiantes.updateOne(
+      { $set: { nombre_1: nombre_1, apellido_1: apellido_1} }
+    )
+      .then(rawResponse => {
+        res.send({ message: "Estudiante updated", raw: rawResponse });
+      })
+      .catch(err => {
+        if (err) throw err;
+      });
+  }
+
 
 setBloques(bloques, res) {
     Bloques.create(bloques, function(err, newBloques) {

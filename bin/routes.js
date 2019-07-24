@@ -91,6 +91,12 @@ res.send("ok");
 //controller.getRegistros(res)
 })
 
+app.put("/Estudiantes", function(req, res) {
+  let estudiantes = req.body.estudiantes;
+ // user.id = req.params.id;
+  controller.updateEstudiantes(estudiantes, res);
+});
+
 
 //Traer todos los tickets
 app.get("/Tickets", (req, res) => {
