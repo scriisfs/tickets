@@ -16,9 +16,9 @@ controller.getUsers(res)
 
 })
 
-app.get("/users/:id", function(req, res) {
-  let { id } = req.params;
-  controller.getUser(id, res);
+app.get("/users/:_id", function(req, res) {
+  let { _id } = req.params;
+  controller.getUser(_id, res);
 });
 
 //Agregar un usuario
