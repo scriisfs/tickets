@@ -31,11 +31,10 @@ controller.getRegistros(res)
 
 
 //Agregar un registro
-app.post("/Registros", (req, res)=>{
-    //console.log(req.body);
-    controller.postRegistros(req, res);
-    //res.send('OK')
-})
+app.post("/Registros", (req, res) => {
+  let { registros } = req.body;
+  controller.setRegistros(registros, res);
+ })
 
 
 //Traer el registro de un estudiante en específico
@@ -78,12 +77,11 @@ controller.getEstudiantes(res)
 
 })
 
-//Agregar un registro
-app.post("/Estudiantes", (req, res)=>{
-    //console.log(req.body);
-    controller.postEstudiantes(req, res);
-    //res.send('OK')
-})
+//Agregar un estudiante
+app.post("/Estudiantes", (req, res) => {
+  let { estudiantes } = req.body;
+  controller.setEstudiantes(estudiantes, res);
+ })
 
 
 //Mostrar el bloque de horario de un estudiante
@@ -101,11 +99,10 @@ controller.getTickets(res)
 })
 
 //Agregar un ticket
-app.post("/Tickets", (req, res)=>{
-    //console.log(req.body);
-    controller.postTickets(req, res);
-    //res.send('OK')
-})
+app.post("/Tickets", (req, res) => {
+  let { tickets } = req.body;
+  controller.setTickets(tickets, res);
+ })
 
 //Mostrar el consumo de tickets que tiene el estudiante
 app.get("/Registros/estudiantes/:id_estudiantes/:numero_consumo", (req, res) => {
@@ -125,7 +122,7 @@ controller.getBloques(res)
 app.post("/Bloques", (req, res) => {
   let { bloques } = req.body;
   controller.setBloques(bloques, res);
- })
- 
+})
+
 
 exports.app = app;

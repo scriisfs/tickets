@@ -98,15 +98,15 @@ async connect (){
         })
     }
 
-       postRegistros(req, res){
-        let registros= req.body.registros;
-        Registros.create( registros, (err, result)=>{
-            if(err)throw err;
-            res.send({newRegistros:result})
-        })
-    }
+setRegistros(registros, res) {
+    Registros.create(registros, function(err, newRegistros) {
+      if (err) throw err;
+      res.send({ status: 200, nR: newRegistros});
+    });
+  }
 
-  setAdmins(admins, res) {
+
+setAdmins(admins, res) {
     Admins.create(admins, function(err, newAdmins) {
       if (err) throw err;
       res.send({ status: 200, nA: newAdmins});
@@ -114,7 +114,15 @@ async connect (){
   }
 
 
-    setBloques(bloques, res) {
+setEstudiantes(estudiantes, res) {
+    Estudiantes.create(estudiantes, function(err, newEstudiantes) {
+      if (err) throw err;
+      res.send({ status: 200, nE: newEstudiantes});
+    });
+  }
+
+
+setBloques(bloques, res) {
     Bloques.create(bloques, function(err, newBloques) {
       if (err) throw err;
       res.send({ status: 200, nB: newBloques});
@@ -122,21 +130,13 @@ async connect (){
   }
 
 
-        postEstudiantes(req, res){
-        let estudiantes = req.body.estudiantes;
-        Estudiantes.create( estudiantes, (err, result)=>{
-            if(err)throw err;
-            res.send({newUser:result})
-        })
-    }
+       setTickets(tickets, res) {
+    Tickets.create(tickets, function(err, newTickets) {
+      if (err) throw err;
+      res.send({ status: 200, nT: newTickets});
+    });
+  }
 
-       postTickets(req, res){
-        let tickets = req.body.tickets;
-        Tickets.create( tickets, (err, result)=>{
-            if(err)throw err;
-            res.send({newUser:result})
-        })
-    }
 }
 
 

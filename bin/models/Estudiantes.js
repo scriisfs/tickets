@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 const Bloques = mongoose.model('Bloques');
 
 const EstudiantesSchema = new Schema ({
-    id_estudiante: String,
     nombre_1: String,
     nombre_2: String,
     apellido_1: String,
