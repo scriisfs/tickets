@@ -122,10 +122,7 @@ setEstudiantes(estudiantes, res) {
   }
 
 updateEstudiantes(estudiantes, res) {
-    //optenemos los campos que queremos actualizar
     let { nombre_1, apellido_1 } = estudiantes;
-    //actualizamos teniendo en cuenta una condicion con el operador $set
-    //https://docs.mongodb.com/manual/reference/operator/update/set/
     Estudiantes.updateOne(
       { $set: { nombre_1: nombre_1, apellido_1: apellido_1} }
     )
@@ -135,6 +132,13 @@ updateEstudiantes(estudiantes, res) {
       .catch(err => {
         if (err) throw err;
       });
+  }
+
+  deleteEstudiantes(estudiantes, res) {
+    Estudiantes.deleteOne({ estudiantes }, function(err) {
+      if (err) throw err;
+      res.send({ message: "Estudiante has been deleted" });
+    });
   }
 
 

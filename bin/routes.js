@@ -91,12 +91,18 @@ res.send("ok");
 //controller.getRegistros(res)
 })
 
+//Actualizar datos de un estudiante
 app.put("/Estudiantes", function(req, res) {
   let estudiantes = req.body.estudiantes;
  // user.id = req.params.id;
   controller.updateEstudiantes(estudiantes, res);
 });
 
+//Eliminar a un estudiante
+app.delete("/Estudiantes", function(req, res) {
+  let { estudiantes } = req.params;
+  controller.deleteEstudiantes(estudiantes, res);
+});
 
 //Traer todos los tickets
 app.get("/Tickets", (req, res) => {
