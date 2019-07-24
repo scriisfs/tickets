@@ -16,6 +16,11 @@ controller.getUsers(res)
 
 })
 
+app.get("/users/:id", function(req, res) {
+  let { id } = req.params;
+  controller.getUser(id, res);
+});
+
 //Agregar un usuario
 app.post("/users", (req, res)=>{
     //console.log(req.body);

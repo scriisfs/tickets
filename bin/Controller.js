@@ -33,6 +33,16 @@ async connect (){
 
    }
 
+     getUser(id, res) {
+    //en el modelo User se ejecuta el find sin ninguna condicion...
+    User.find({ id }, (err, users) => {
+      //en caso de haberse presentado un error se ejecuta el error
+      if (err) throw err;
+      //de lo contrario se retorna un objeto con todos los resultados
+      res.send({ User: users});
+    });
+  }
+
    getRegistros(res){
         Registros.find({}, (err, registros)=>{
             if(err) throw err;
