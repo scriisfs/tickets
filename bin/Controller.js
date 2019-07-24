@@ -106,13 +106,21 @@ async connect (){
         })
     }
 
-   postAdmins(req, res){
-        let admins = req.body.admins;
-        Admins.create( admins, (err, result)=>{
-            if(err)throw err;
-            res.send({newUser:result})
-        })
-    }
+  setAdmins(admins, res) {
+    Admins.create(admins, function(err, newAdmins) {
+      if (err) throw err;
+      res.send({ status: 200, nA: newAdmins});
+    });
+  }
+
+
+    setBloques(bloques, res) {
+    Bloques.create(bloques, function(err, newBloques) {
+      if (err) throw err;
+      res.send({ status: 200, nB: newBloques});
+    });
+  }
+
 
         postEstudiantes(req, res){
         let estudiantes = req.body.estudiantes;
@@ -129,17 +137,6 @@ async connect (){
             res.send({newUser:result})
         })
     }
-
-      postBloques(req, res){
-        let bloques = req.body.bloques;
-        Bloques.create(  (err, result)=>{
-            if(err)throw err;
-            res.send({newUser:result})
-        })
-    }
-
-
-
 }
 
 

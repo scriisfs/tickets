@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const BloquesSchema = new Schema ({
-    id_tickets: String,
-    numero_recargas: String,
-    numero_consumo: String,
+    dia: String,
+    hora_inicio: String,
+    hora_finalizacion: String,
 
       estudiante: [
 {

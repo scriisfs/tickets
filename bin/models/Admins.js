@@ -2,7 +2,6 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const AdminsSchema = new Schema ({
-    id_admin: String,
     nombre_1: String,
     nombre_2: String,
     apellido_1: String,

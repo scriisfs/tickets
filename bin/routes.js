@@ -59,11 +59,10 @@ controller.getAdmins(res)
 })
 
 //Agregar un admin
-app.post("/Admins", (req, res)=>{
-    //console.log(req.body);
-    controller.postAdmins(req, res);
-    //res.send('OK')
-})
+app.post("/Admins", (req, res) => {
+  let { admins } = req.body;
+  controller.setAdmins(admins, res);
+ })
 
 
 //Mostrar el id de un admin con su respectivos nombres y apellidos
@@ -123,16 +122,10 @@ controller.getBloques(res)
 })
 
 //Agregar un bloque
-app.post("/Bloques", (req, res)=>{
-    //console.log(req.body);
-    controller.postBloques(req, res);
-    //res.send('OK')
-})
-
-/app.get("/Bloques", function(req, res) {
-	Bloques.find({}, function(err, bloques) {
-    	res.status(200).send(bloques)
-    });
-});
+app.post("/Bloques", (req, res) => {
+  let { bloques } = req.body;
+  controller.setBloques(bloques, res);
+ })
+ 
 
 exports.app = app;
