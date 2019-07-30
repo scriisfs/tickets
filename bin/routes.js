@@ -81,6 +81,11 @@ app.post("/Estudiantes", (req, res) => {
   controller.setEstudiantes(estudiantes, res);
  })
 
+ //Tarer estudaintes por id
+app.get("/Estudiantes/:_id", function(req, res) {
+  let { _id } = req.params;
+  controller.getEstudiante(_id, res);
+});
 
 //Mostrar el bloque de horario de un estudiante
 app.get("/Estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {

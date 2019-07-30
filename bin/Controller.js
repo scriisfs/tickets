@@ -91,6 +91,13 @@ Registros.find({ nombre_1, nombre_2, apellido_1, apellido_2 }, (err, registros) 
 
    }
 
+getEstudiante(_id, res) {
+Estudiantes.find({ _id }, (err, estudiantes) => {
+    if (err) throw err;
+      res.send({ Estudiante: estudiantes});
+    });
+  }
+
    getTickets(res){
         Tickets.find({}, (err, tickets)=>{
             if(err) throw err;
