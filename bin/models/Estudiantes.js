@@ -10,6 +10,7 @@ const EstudiantesSchema = new Schema ({
     numero_identificacion: String,
     telefono: String,
     barrio: String,
+    codigo_estudiante: String,
     esrtrato: String,
     id_bloque: String,
       Bloques: [

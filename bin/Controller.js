@@ -57,6 +57,13 @@ Registros.find({ nombre_1 }, (err, registros) => {
     });
   }
 
+getRegistroo( nombre_1, nombre_2, apellido_1, apellido_2, res) {
+Registros.find({ nombre_1, nombre_2, apellido_1, apellido_2 }, (err, registros) => {
+    if (err) throw err;
+      res.send({ registroo: registros});
+    });
+  }
+
    getAdmins(res){
         Admins.find({}, (err, admins)=>{
             if(err) throw err;

@@ -21,13 +21,6 @@ app.get("/users/:_id", function(req, res) {
   controller.getUser(_id, res);
 });
 
-//Agregar un usuario
-app.post("/users", (req, res)=>{
-    //console.log(req.body);
-    controller.postUsers(req, res);
-    //res.send('OK')
-})
-
 //Traer todos los registros
 app.get("/Registros", (req, res) => {
 controller.getRegistros(res)
@@ -43,14 +36,14 @@ app.post("/Registros", (req, res) => {
 
 
 //Traer el registro de un estudiante en específico
-app.get("/Registros/estudiantes/:nombre_1", (req, res) => {
-let { nombre_1} = req.params;
+app.get("/Registros/:pin/estudiantes/:nombre_1", (req, res) => {
+let { pin, nombre_1} = req.params;
 controller.getRegistro(nombre_1, res);
 
 })
 
 //Que un admin pueda ver el número de recarga del ticket de un estudiante
-app.get("/Registros/admin/:id_admins/estudiantes/:id_estudiantes/tickets/numero_recarga", (req, res) => {
+app.get("/Registros/admins/:id_admins/estudiantes/:id_estudiantes/tickets/:numero_recargas", (req, res) => {
 console.log(req.params)
 res.send("ok");
 //controller.getRegistros(res)
@@ -70,10 +63,10 @@ app.post("/Admins", (req, res) => {
 
 
 //Mostrar el id de un admin con su respectivos nombres y apellidos
-app.get("/Registros/admins/:id_admins/:nombre_1/:nombre_2/:apellido_1/:apellido_2", (req, res) => {
-console.log(req.params)
-res.send("ok");
-//controller.getRegistros(res)
+app.get("/Admins/:nombre_1/nombre_2/:apellido_1/:apellido_2", (req, res) => {
+let { nombre_1, nombre_2, apellido_1, apellido_2} = req.params;
+controller.getRegistroo( nombre_1, nombre_2, apellido_1, apellido_2, res);
+
 })
 
 //Traer todos los estudiantes
