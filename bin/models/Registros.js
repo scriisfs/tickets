@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const RegistrosSchema = new Schema ({
-    id_admin: String,
-    id_tickets: String,
-    id_estudiantes: String,
+    _id_admin: String,
+    _id_tickets: String,
+    _id_estudiantes: String,
     pin: String,
     fecha_creacion: String,
 

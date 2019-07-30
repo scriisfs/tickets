@@ -36,9 +36,9 @@ app.post("/Registros", (req, res) => {
 
 
 //Traer el registro de un estudiante en específico
-app.get("/Registros/:pin/estudiantes/:nombre_1", (req, res) => {
-let { pin, nombre_1} = req.params;
-controller.getRegistro(nombre_1, res);
+app.get("/Registros/:pin/estudiantes/:codigo_estudiante", (req, res) => {
+let { pin, codigo_estudiante} = req.params;
+controller.getRegistro(pin, codigo_estudiante, res);
 
 })
 

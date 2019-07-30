@@ -50,8 +50,8 @@ User.find({ _id }, (err, users) => {
 
    }
 
-getRegistro(nombre_1, res) {
-Registros.find({ nombre_1 }, (err, registros) => {
+getRegistro( pin, codigo_estudiante, res) {
+Registros.find({ pin, codigo_estudiante }, (err, registros) => {
     if (err) throw err;
       res.send({ Registro: registros});
     });
