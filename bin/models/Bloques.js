@@ -6,7 +6,7 @@ const BloquesSchema = new Schema ({
     hora_inicio: String,
     hora_finalizacion: String,
 
-      estudiante: [
+      estudiantes_id: [
 {
       type: Schema.Types.ObjectId,
       ref: "Estudiantes"

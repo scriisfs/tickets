@@ -13,7 +13,8 @@ const EstudiantesSchema = new Schema ({
     codigo_estudiante: String,
     esrtrato: String,
     id_bloque: String,
-      bloques: [
+
+      bloques_id: [
     {
       type: Schema.Types.ObjectId,
       ref: "Bloques"

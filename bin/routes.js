@@ -87,12 +87,17 @@ app.get("/Estudiantes/:_id", function(req, res) {
   controller.getEstudiante(_id, res);
 });
 
+app.get("/estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {
+    let { estudiantes_id, bloques_id } = req.params;
+    controller.getEstudianteBloque( estudiantes_id, bloques_id, res);
+});
+
 //Mostrar el bloque de horario de un estudiante
-app.get("/Estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {
+/*app.get("/Estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {
 console.log(req.params)
 res.send("ok");
 //controller.getRegistros(res)
-})
+})*/
 
 //Actualizar datos de un estudiante
 app.put("/Estudiantes", function(req, res) {

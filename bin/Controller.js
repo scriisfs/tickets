@@ -169,6 +169,22 @@ updateEstudiantes(estudiantes, res) {
     });
   }
 
+    getEstudianteBloque(estudiantes_id, bloques_id, res) {
+        Bloques.find({ _id: bloques_id,  estudiantes_id: estudiantes_id })
+            .populate({
+                path: "bloques_id",
+                select: "dia hora_inicio hora finalizacion",
+                /*populate: {
+                    path: "artists",
+                    select: "name1 name2 last_name1 last_name2"
+                }*/
+            })
+            .exec(function(err, EstudianteBloque) {
+                if (err) throw err;
+                res.send({ status: 200, Estudiantes_Bloques: EstudianteBloque });
+            });
+         }
+
 
 setBloques(bloques, res) {
     Bloques.create(bloques, function(err, newBloques) {
