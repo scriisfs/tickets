@@ -16,9 +16,9 @@ controller.getUsers(res)
 
 })
 
-app.get("/users/:_id", function(req, res) {
-  let { _id } = req.params;
-  controller.getUser(_id, res);
+app.get("/users/:id", function(req, res) {
+  let { id } = req.params;
+  controller.getUser(id, res);
 });
 
 //Traer todos los registros
@@ -82,9 +82,9 @@ app.post("/Estudiantes", (req, res) => {
  })
 
  //Tarer estudaintes por id
-app.get("/Estudiantes/:_id", function(req, res) {
-  let { _id } = req.params;
-  controller.getEstudiante(_id, res);
+app.get("/Estudiantes/:id", function(req, res) {
+  let { id } = req.params;
+  controller.getEstudiante(id, res);
 });
 
 app.get("/estudiantes/:id_estudiantes/bloques/:id_bloques", (req, res) => {

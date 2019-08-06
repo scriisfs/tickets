@@ -33,8 +33,8 @@ async connect (){
 
    }
 
-getUser(_id, res) {
-User.find({ _id }, (err, users) => {
+getUser(id, res) {
+User.find({ _id: id }, (err, users) => {
     if (err) throw err;
       res.send({ User: users});
     });
@@ -91,8 +91,8 @@ Registros.find({ nombre_1, nombre_2, apellido_1, apellido_2 }, (err, registros) 
 
    }
 
-getEstudiante(_id, res) {
-Estudiantes.find({ _id }, (err, estudiantes) => {
+getEstudiante(id, res) {
+Estudiantes.find({ _id: id}, (err, estudiantes) => {
     if (err) throw err;
       res.send({ Estudiante: estudiantes});
     });
